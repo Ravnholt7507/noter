@@ -1,0 +1,27 @@
+Normalization of databases
+
+    The normalization of databases is a process that allows to reduce the redundancy of data and to improve the quality of the information. The normalization of databases is a process that allows to reduce the redundancy of data and to improve the quality of the information.
+
+When is decompostion lossless?
+    
+    When the decomposition of a relation R into two relations R1 and R2 is lossless, it means that the decomposition is reversible, i.e. that the two relations R1 and R2 can be combined to form the original relation R. This is the case when the two relations R1 and R2 are disjoint, i.e. when they have no common attribute.
+    eksample:
+    R = {A, B, C, D}
+    R1 = {A, B, C}
+    R2 = {A, B, D}
+    R1 and R2 are disjoint, so the decomposition is lossless.
+    
+When is decomposition lossy?
+    
+    When the decomposition of a relation R into two relations R1 and R2 is lossy, it means that the decomposition is not reversible, i.e. that the two relations R1 and R2 cannot be combined to form the original relation R. This is the case when the two relations R1 and R2 are not disjoint, i.e. when they have at least one common attribute.
+
+    eksample:
+    R = {A, B, C, D}
+    R1 = {A, B, C}
+    R2 = {A, B, C}
+    R1 and R2 are not disjoint, so the decomposition is lossy.
+
+What is the difference between lossless and lossy decomposition?
+        
+    A lossless decomposition is a decomposition that is reversible, i.e. that the two relations R1 and R2 can be combined to form the original relation R. A lossy decomposition is a decomposition that is not reversible, i.e. that the two relations R1 and R2 cannot be combined to form the original relation R.
+
