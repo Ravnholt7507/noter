@@ -45,3 +45,4 @@ informed search algorithms:
         A* search er en algoritme der vælger den node med den laveste heuristic værdi + cost, og derefter fortsætter med at vælge den node med den laveste heuristic værdi + cost. 
         A* search er en algoritme der er hurtig
         A* search er en algoritme der altid finder den optimale løsning
+    
