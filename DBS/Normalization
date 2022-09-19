@@ -25,3 +25,102 @@ What is the difference between lossless and lossy decomposition?
         
     A lossless decomposition is a decomposition that is reversible, i.e. that the two relations R1 and R2 can be combined to form the original relation R. A lossy decomposition is a decomposition that is not reversible, i.e. that the two relations R1 and R2 cannot be combined to form the original relation R.
 
+normal forms
+    
+    Normal forms are a set of rules that define how a relation should be decomposed into two or more relations. The normal forms are used to reduce the redundancy of data and to improve the quality of the information. The normal forms are used to reduce the redundancy of data and to improve the quality of the information.
+
+    NF = normal form
+    various normal forms (in increasing order of strictness):
+    1NF
+    2NF
+    3NF
+    BCNF
+    4NF
+    5NF
+    6NF
+
+    first normal form:
+    A relation is in first normal form (1NF) if it is in the following form:
+    R = {A1, A2, ..., An}
+    where each attribute Ai is atomic, i.e. it is not a composite attribute.
+
+    1nf decomposition algorithm:
+    1. For each composite attribute A, create a new relation R' with the same primary key as R and with the attributes of A as its attributes.
+    2. For each tuple t in R, create a tuple t' in R' with the same primary key as t and with the values of the attributes of A as its values.
+    3. For each foreign key in R that references A, change the foreign key to reference R' instead of A.
+    4. Delete A from R.
+
+
+    second normal form:
+    A relation is in second normal form (2NF) if it is in the following form:
+    R = {A1, A2, ..., An}
+    where each attribute Ai is atomic, i.e. it is not a composite attribute, and each non-key attribute is fully functionally dependent on the key.
+
+    2nf decompostion algorithm:
+    1. Find the candidate keys of the relation R.
+    2. For each candidate key K, find the non-key attributes that are fully functionally dependent on K.
+    3. For each non-key attribute A that is fully functionally dependent on K, create a new relation R1 with the attributes K and A.
+    4. For each non-key attribute A that is not fully functionally dependent on K, create a new relation R2 with the attributes K and A.
+    5. Combine the relations R1 and R2 to form the relation R.
+    6. Repeat steps 1 to 5 for each candidate key K.
+
+
+    third normal form:
+    A relation is in third normal form (3NF) if it is in the following form:
+    R = {A1, A2, ..., An}
+    where each attribute Ai is atomic, i.e. it is not a composite attribute, and each non-key attribute is transitively functionally dependent on the key.
+
+    3nf decomposition algorithm:
+    1. Find the candidate keys of the relation R.
+    2. For each candidate key K, check if the relation R is in 3NF with respect to K.
+    3. If the relation R is not in 3NF with respect to K, decompose R into two relations R1 and R2, where R1 contains the key K and R2 contains the non-key attributes of R that are not transitively functionally dependent on K.
+    4. Repeat steps 2 and 3 until the relation R is in 3NF.
+
+
+    Boyce-Codd normal form:
+    A relation is in Boyce-Codd normal form (BCNF) if it is in the following form:
+    R = {A1, A2, ..., An}
+    where each attribute Ai is atomic, i.e. it is not a composite attribute, and each non-key attribute is transitively functionally dependent on the key, and each non-key attribute is not functionally dependent on any proper subset of the key.
+
+    bcnf decomposition algorithm:
+    1. Find the candidate keys of the relation R.
+    2. For each candidate key K, check if the relation R is in BCNF with respect to K.
+    3. If the relation R is not in BCNF with respect to K, decompose R into two relations R1 and R2, where R1 contains the key K and R2 contains the non-key attributes of R that are not transitively functionally dependent on K.
+    4. Repeat steps 2 and 3 until the relation R is in BCNF.
+
+
+    fourth normal form:
+    A relation is in fourth normal form (4NF) if it is in the following form:
+    R = {A1, A2, ..., An}
+    where each attribute Ai is atomic, i.e. it is not a composite attribute, and each non-key attribute is not multi-valued.
+
+    4nf decomposition algorithm:
+    1. Find the candidate keys of the relation R.
+    2. For each candidate key K, check if the relation R is in 4NF with respect to K.
+    3. If the relation R is not in 4NF with respect to K, decompose R into two relations R1 and R2, where R1 contains the key K and R2 contains the non-key attributes of R that are not multi-valued.
+    4. Repeat steps 2 and 3 until the relation R is in 4NF.
+
+
+    fifth normal form:
+    A relation is in fifth normal form (5NF) if it is in the following form:
+    R = {A1, A2, ..., An}
+    where each attribute Ai is atomic, i.e. it is not a composite attribute, and each non-key attribute is not multi-valued, and each non-key attribute is not functionally dependent on any proper subset of the key.
+
+    5nf decomposition algorithm:
+    1. Find the candidate keys of the relation R.
+    2. For each candidate key K, check if the relation R is in 5NF with respect to K.
+    3. If the relation R is not in 5NF with respect to K, decompose R into two relations R1 and R2, where R1 contains the key K and R2 contains the non-key attributes of R that are not multi-valued and that are not functionally dependent on any proper subset of K.
+    4. Repeat steps 2 and 3 until the relation R is in 5NF.
+
+
+    sixth normal form:
+    A relation is in sixth normal form (6NF) if it is in the following form:
+    R = {A1, A2, ..., An}
+    where each attribute Ai is atomic, i.e. it is not a composite attribute, and each non-key attribute is not multi-valued, and each non-key attribute is not functionally dependent on any proper subset of the key, and each non-key attribute is not transitively functionally dependent on the key.
+
+    6nf decomposition algorithm:
+    1. Find the candidate keys of the relation R.
+    2. For each candidate key K, check if the relation R is in 6NF with respect to K.
+    3. If the relation R is not in 6NF with respect to K, decompose R into two relations R1 and R2, where R1 contains the key K and R2 contains the non-key attributes of R that are not multi-valued and that are not functionally dependent on any proper subset of K and that are not transitively functionally dependent on K.
+    4. Repeat steps 2 and 3 until the relation R is in 6NF.
+
