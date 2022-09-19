@@ -1,0 +1,29 @@
+Graph searching:
+    directed graph består af et sæt af noder og et sæt af arcs (beskriver relationer mellem noder så en node n_1 går mod node n_2)
+    https://artint.info/2e/html/ArtInt2e.Ch3.S3.SS1.html
+Uninformed Search Strategies:
+
+1. Breadth-first Search:
+    Brugbar når problemet er småt nok til at man ikke skal tænke over plads og man skal bruge en løsning med færest arcs/steps.
+    Dårlig når alle mulige løsninger har mange arcs, og er specielt dårlig til store problemer da space clompexity er exponentil.
+    Søger principielt efter alle mulige paths på samme tid, vil derfor også altid finde den korteste først (se link for grafisk eksempel).
+    https://artint.info/2e/html/ArtInt2e.Ch3.S5.SS1.html
+
+2. Depth-first Search:
+    Fungere lidt modsat i forhold til Breadth-first, da depth-first søger en path ad gangen. (se link for grafisk eksempel) 
+    Hvis der er en løsning i den første path søgt, vil kompleksiteten være linear, i forhold til hvor mange arcs der er i pathen. Hvis der ikke er en løsning i den første path vil Worstcase derimod være at der søgningen er fanget for evigt, i tilfælde af at grafferne er uendelig eller hvis der er en cyklus i grafen. hvis graffen har en ende, og forward branching factor er mindre eller lige b (b = branching factor), og alle paths fra start noden har k eller mindre arcs(betyder basically at der ikke må være en cyklus), vil worstcase time complexity være O(b^k).
+
+    God når der er begrænset plads, mange mulige løsninger og når man kan manipulere med måden noder er tilføjet til stacken, så man kan finde en løsning i første forsøg.
+    dårlig når man kan komme i infinite paths, når der er løsninger tæt på roden eller når der er en node der kan nås ned flere forskellige paths
+    https://artint.info/2e/html/ArtInt2e.Ch3.S5.SS2.html
+
+3. Iterative Deepening:
+    Fungere som en blanding af breadth-first search og depth-first search. principielt er der egentlig bare sat en grænse for hvor langt en depth-first algoritme kan kigge ned af en gren, før den går videre til den næste gren. det betyder også at den altid vil finde den korteste path, ligesom breadth-first også vil. (se link for grafisk eksempel)
+    Worstcase time complexity er O(b^k).
+    https://stackoverflow.com/questions/2994146/difference-between-breadth-first-search-and-iterative-deepening
+
+4. lowest-cost-first search
+    Denne algoritme traversere træet ved hele tiden at vælge den node med den laveste cost, frem for at traversere træet systematisk ligesom der andre søge algoritmet. Det betyder også at den altid vil finde en løsning hvis der er en, og også altid den mest optimale i forhold til cost. 
+    ulempen ved denne search er at worstcase time complexity er exponentiel ligensom ved breath-first search.
+
+
