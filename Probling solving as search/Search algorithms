@@ -1,5 +1,5 @@
 Graph searching:
-    directed graph består af et sæt af noder og et sæt af arcs (beskriver relationer mellem noder så en node n_1 går mod node n_2)
+    directed graph består af et sæt af noder og et sæt af arcs (beskriver relationer mellem noder så en node n_1 går mod node n_2) test
     https://artint.info/2e/html/ArtInt2e.Ch3.S3.SS1.html
 Uninformed Search Strategies:
 
