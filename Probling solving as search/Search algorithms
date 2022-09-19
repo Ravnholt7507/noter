@@ -1,5 +1,5 @@
 Graph searching:
-    directed graph består af et sæt af noder og et sæt af arcs (beskriver relationer mellem noder så en node n_1 går mod node n_2) test
+    directed graph består af et sæt af noder og et sæt af arcs (beskriver relationer mellem noder så en node n_1 går mod node n_2)
     https://artint.info/2e/html/ArtInt2e.Ch3.S3.SS1.html
 Uninformed Search Strategies:
 
@@ -12,7 +12,6 @@ Uninformed Search Strategies:
 2. Depth-first Search:
     Fungere lidt modsat i forhold til Breadth-first, da depth-first søger en path ad gangen. (se link for grafisk eksempel) 
     Hvis der er en løsning i den første path søgt, vil kompleksiteten være linear, i forhold til hvor mange arcs der er i pathen. Hvis der ikke er en løsning i den første path vil Worstcase derimod være at der søgningen er fanget for evigt, i tilfælde af at grafferne er uendelig eller hvis der er en cyklus i grafen. hvis graffen har en ende, og forward branching factor er mindre eller lige b (b = branching factor), og alle paths fra start noden har k eller mindre arcs(betyder basically at der ikke må være en cyklus), vil worstcase time complexity være O(b^k).
-
     God når der er begrænset plads, mange mulige løsninger og når man kan manipulere med måden noder er tilføjet til stacken, så man kan finde en løsning i første forsøg.
     dårlig når man kan komme i infinite paths, når der er løsninger tæt på roden eller når der er en node der kan nås ned flere forskellige paths
     https://artint.info/2e/html/ArtInt2e.Ch3.S5.SS2.html
@@ -21,9 +20,28 @@ Uninformed Search Strategies:
     Fungere som en blanding af breadth-first search og depth-first search. principielt er der egentlig bare sat en grænse for hvor langt en depth-first algoritme kan kigge ned af en gren, før den går videre til den næste gren. det betyder også at den altid vil finde den korteste path, ligesom breadth-first også vil. (se link for grafisk eksempel)
     Worstcase time complexity er O(b^k).
     https://stackoverflow.com/questions/2994146/difference-between-breadth-first-search-and-iterative-deepening
+    https://artint.info/2e/html/ArtInt2e.Ch3.S5.SS3.html
 
-4. lowest-cost-first search
+4. lowest-cost-first search / Uniform Cost Search:
     Denne algoritme traversere træet ved hele tiden at vælge den node med den laveste cost, frem for at traversere træet systematisk ligesom der andre søge algoritmet. Det betyder også at den altid vil finde en løsning hvis der er en, og også altid den mest optimale i forhold til cost. 
     ulempen ved denne search er at worstcase time complexity er exponentiel ligensom ved breath-first search.
+    https://artint.info/2e/html/ArtInt2e.Ch3.S5.SS4.html
 
 
+informed search algorithms:
+
+    heuristic function
+        en heuristic function er en funktion der giver en værdi til en node, som er en bedømmelse af hvor langt væk den er fra målet. hvis værdien er et uendelighedstegn har problemet ingen løsning.
+
+    informed algorithms
+        en informed algorithm er en algoritme der bruger en heuristic function til at finde en løsning.
+
+    1. Greedy Best-first Search:
+        Greedy best-first search er en algoritme der vælger den node med den laveste heuristic værdi, og derefter fortsætter med at vælge den node med den laveste heuristic værdi. 
+        Greedy best-first search er en algoritme der er hurtig
+        Greedy best-first search er en algoritme der ikke altid finder den optimale løsning
+
+    2. A* Search:
+        A* search er en algoritme der vælger den node med den laveste heuristic værdi + cost, og derefter fortsætter med at vælge den node med den laveste heuristic værdi + cost. 
+        A* search er en algoritme der er hurtig
+        A* search er en algoritme der altid finder den optimale løsning
