@@ -27,10 +27,36 @@ what is naive backtracking:
     it continues to backtrack until it finds a solution or it runs out of values to try
     can be compared to a depth first search
 
+Inference:
+    deducing existing constraints, that follow from already known constraints that are already satisfied
+        Example: map coloring
+            variables: color
+            domains: color: red, blue, green
+            constraints: no two adjacent countries can have the same color
+            inference: if a country has a red neighbor, it cannot be red
+            inference: if a country has a blue neighbor, it cannot be blue
+            inference: if a country has a green neighbor, it cannot be green
+    
+constraint network:
+    one node for each variable 
+    one arc for each constraint
+    each arc connects the variables involved in the constraint
+    an arc is arc consistent if the domain of the tail variable is a subset of the domain of the head variable
+    the network is arc consistent if all arcs are arc consistent
+
+enforcing arc consistency for one pair of variables:
+    for each value in the tail variable's domain
+        if there is no value in the head variable's domain that satisfies the constraint
+            remove the value from the tail variable's domain
+    if the tail variable's domain is empty
+        return failure
+    else
+        return success
+
+how to use inference?
+    if a variable has only one value in its domain
+        assign that value to the variable
+        remove that value from the domains of all other variables that are connected to the variable
+        repeat until no more variables have only one value in their domain
 
 
-
-
-
-
-        
