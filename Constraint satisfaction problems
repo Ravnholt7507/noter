@@ -1,0 +1,36 @@
+What is a constraint satisfaction problem?
+    a constraint is a condition that must be met by a solution
+    a constraint satisfaction problem is a problem in which a solution must satisfy a set of constraints
+    constraints are found by describing the world(environment) in terms of variables and domains
+    Example: schedule
+        variables: time, room, instructor
+        domains: time: 8:00-12:00, room: 1-10, instructor: 1-5
+        constraints: time, room, instructor
+    
+    Example: map coloring
+        variables: color
+        domains: color: red, blue, green
+        constraints: no two adjacent countries can have the same color
+    
+    unary constraints: a constraint that involves only one variable
+    binary constraints: a constraint that involves two variables
+    n-ary constraints: a constraint that involves n variables
+
+consistency vs extensibility
+    consistency: a solution must satisfy all constraints
+    extensibility: a solution must satisfy all constraints, but it may be possible to add more constraints
+
+what is naive backtracking:
+    naive backtracking is a search algorithm that tries to find a solution by assigning values to variables one at a time
+    it tries to assign a value to a variable and then tries to assign a value to the next variable
+    if it cannot find a value that satisfies all constraints, it backtracks and tries a different value for the previous variable
+    it continues to backtrack until it finds a solution or it runs out of values to try
+    can be compared to a depth first search
+
+
+
+
+
+
+
+        
