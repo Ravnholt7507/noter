@@ -59,4 +59,34 @@ how to use inference?
         remove that value from the domains of all other variables that are connected to the variable
         repeat until no more variables have only one value in their domain
 
+decomposition:
+    breaking a problem into subproblems
+    Example: map coloring
+        variables: color
+        domains: color: red, blue, green
+        constraints: no two adjacent countries can have the same color
+        decomposition: break the map into regions
+        decomposition: break the regions into subregions
+        decomposition: break the subregions into countries
+        decomposition: break the countries into states
+
+the acyclicCG algorithm explenation:
+    obtain a directed tree from the network constrain graph, picking an arbitrary node as the root and directing the arcs from the root to the leaves
+    order the variables topologically i.e., such that each vertex is ordered before its children
+
+the acyclicCG algorithm:
+    for each variable in the topological order
+        if the variable has only one value in its domain
+            assign that value to the variable
+            remove that value from the domains of all other variables that are connected to the variable
+        else
+            for each value in the variable's domain
+                if there is no value in the domains of the variables that are connected to the variable that satisfies the constraint
+                    remove the value from the variable's domain
+            if the variable's domain is empty
+                return failure
+    return success
+
+    
+
 
