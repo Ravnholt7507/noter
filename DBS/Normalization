@@ -80,7 +80,7 @@ normal forms
     Boyce-Codd normal form:
     A relation is in Boyce-Codd normal form (BCNF) if it is in the following form:
     R = {A1, A2, ..., An}
-    where each attribute Ai is atomic, i.e. it is not a composite attribute, and each non-key attribute is transitively functionally dependent on the key, and each non-key attribute is not functionally dependent on any proper subset of the key.
+    where each attribute Ai is atand each non-key attribute is not functionally dependent on any proper subset of the key.omic, i.e. it is not a composite attribute, and each non-key attribute is transitively functionally dependent on the key, 
 
     bcnf decomposition algorithm:
     1. Find the candidate keys of the relation R.
@@ -123,4 +123,5 @@ normal forms
     2. For each candidate key K, check if the relation R is in 6NF with respect to K.
     3. If the relation R is not in 6NF with respect to K, decompose R into two relations R1 and R2, where R1 contains the key K and R2 contains the non-key attributes of R that are not multi-valued and that are not functionally dependent on any proper subset of K and that are not transitively functionally dependent on K.
     4. Repeat steps 2 and 3 until the relation R is in 6NF.
+
 
